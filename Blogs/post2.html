@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Page</title>
+  <link rel="stylesheet" href="../Blogs/blogs.css">
+</head>
+<body>
+<!-- Header Section -->
+<header class="header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <div class="container">
+          <!-- Logo -->
+          <a class="navbar-brand" href="#">
+              <img src="blog-assets/logo.png" alt="Whale Digital Studios Logo" height="50">
+          </a>
+
+          <!-- Toggler Button for Mobile -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navigation Links -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <a class="nav-link active" href="#index.html" aria-current="page">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#services.html">Services</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#blog.html">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#contact.html">Contact</a>
+                  </li>
+              </ul>
+
+              <!-- Get In Touch Button -->
+              <a href="#get-in-touch" class="btn btn-primary ms-lg-3">GET IN TOUCH</a>
+          </div>
+      </div>
+  </nav>
+</header>
+
+<!-- Blogs Section -->
+<section class="blogs">
+  <h1>Blog</h1>
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Search blogs...">
+    <button id="search-button">Search</button>
+  </div>
+</section>
+
+
+  <main>
+    <div class="blog-grid">
+      <!-- Blog containers will be dynamically inserted here -->
+    </div>
+    <button id="view-all-blogs">View All Blogs</button>
+  </main>
+
+   <!-- Footer Section -->
+<footer class="footer-section">
+  <div class="container">
+      <!-- Top Row: Five Columns -->
+      <div class="footer-top-row">
+          <!-- Column 1: Hyperlinks to Pages -->
+          <div class="footer-column">
+              <ul>
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#about">About Us</a></li>
+                  <li><a href="#services">Services</a></li>
+                  <li><a href="#testimonials">Testimonials</a></li>
+                  <li><a href="#contact">Contact</a></li>
+              </ul>
+          </div>
+
+          <!-- Column 2: Quick Links to Services -->
+          <div class="footer-column">
+              <h4>Our Services</h4>
+              <ul>
+                  <li><a href="#services">Website Development</a></li>
+                  <li><a href="#services">UX/UI Design</a></li>
+                  <li><a href="#services">Business Software Systems</a></li>
+                  <li><a href="#services">Digital Marketing</a></li>
+              </ul>
+          </div>
+
+       <!-- Column 3: Company Name, Logo, and Slogan -->
+<div class="footer-column">
+  <img src="blog-assets/logo.png" alt="Whale Digital Studios Logo" class="footer-logo">
+</div>
+
+          <!-- Column 4: Contacts and Location -->
+          <div class="footer-column">
+              <h4>Contact Us</h4>
+              <ul>
+                  <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</li>
+                  <li><i class="fas fa-phone"></i> +123 456 7890</li>
+                  <li><i class="fas fa-envelope"></i> info@whaledigitalstudios.com</li>
+              </ul>
+          </div>
+
+<!-- Column 5: Newsletter and Social Media -->
+<div class="footer-column">
+  <h4>Subscribe to Our Newsletter</h4>
+  <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email address" required>
+      <button type="submit">Subscribe</button>
+  </form>
+  <div class="social-media">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+  </div>
+</div>
+
+      <!-- Bottom Row: Copyright Section -->
+      <div class="footer-bottom-row">
+          <div class="copyright">
+              &copy; 2025 Whale Digital Studios. All rights reserved.
+          </div>
+      </div>
+  </div>
+</footer>
+
+  <script src="../Blogs/blogs.js"></script>
+</body>
+</html>

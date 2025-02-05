@@ -1,0 +1,220 @@
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header with Glass Effect */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #000000; /* Semi-transparent black */
+  backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 0 px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+}
+
+/* Navbar */
+.navbar {
+  padding: 15px 0;
+}
+
+.navbar-brand img {
+  height: 50px; /* Adjust logo height */
+}
+
+.navbar-nav {
+  gap: 20px; /* Space between nav items */
+}
+
+.nav-link {
+  color: #DC7901 !important; /* Dark gray text */
+  font-weight: bold; /* Bold text */
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #f0f0f0 !important; /* Secondary color */
+}
+
+
+
+  /* Footer Section */
+.footer-section {
+  background: linear-gradient(135deg, #000000, #000000); /* Gradient background */
+  color: #ffffff; /* White text */
+  padding: 40px 40px 20px 40px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Top Row: Five Columns */
+.footer-top-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between columns */
+  margin-bottom: 40px; /* Space between top and bottom rows */
+}
+
+.footer-column {
+  flex: 1 1 18%; /* Equal width for all columns */
+  min-width: 150px; /* Minimum width for smaller screens */
+  text-align: left;
+}
+
+.footer-column h4 {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  color: #DC7901; /* Yellow titles */
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #ffffff; /* White text */
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  text-align: left;
+}
+
+.footer-column ul li a:hover {
+  color: #DC7901; /* Yellow hover effect */
+  text-decoration: underline;
+}
+
+/* Logo and Company Name */
+.footer-brand {
+  text-align: left; /* Center the logo and name */
+}
+
+.footer-logo {
+  width: 120px; /* Smaller logo */
+  height: auto;
+  margin: 10px auto; /* Center the logo */
+  display: block; /* Ensure the logo is centered */
+}
+
+.footer-brand h3 {
+  font-size: 1.25rem; /* Smaller company name */
+  margin: 0;
+  text-align: center; /* Center the name */
+  white-space: nowrap; /* Prevent name from wrapping */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis if text overflows */
+  font-style: italic;
+
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  color: #f0f0f0; /* Light gray text */
+  margin-top: 10px;
+}
+
+/* Newsletter Form */
+.newsletter-form {
+  display: flex;
+  flex-direction: column; /* Stack input and button vertically */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.newsletter-form input {
+  padding: 10px; /* Adjusted padding */
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.newsletter-form button {
+  padding: 8px 16px; /* Smaller button (50% reduction) */
+  background-color: #00766A; /* Yellow button */
+  color: #000000; /* Black text */
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem; /* Smaller font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #DC7901; /* Darker yellow on hover */
+}
+
+/* Social Media Section */
+.social-media {
+  margin-top: 20px; /* Space above the "Follow Us" section */
+}
+
+.social-media h4 {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  color: #DC7901; /* Yellow title */
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px; /* Space between icons */
+  justify-content: left; /* Center the icons */
+}
+
+.social-icons .social-icon {
+  color: #ffffff; /* White icons */
+  font-size: 1.5rem; /* Larger icons */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons .social-icon:hover {
+  color: #00766A; /* Yellow hover effect */
+  transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+/* Bottom Row: Copyright Section */
+.footer-bottom-row {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Full-width separator */
+  width: 100%; /* Ensure the line spans the entire screen */
+}
+
+.copyright {
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-top-row {
+      flex-direction: column;
+      gap: 30px;
+  }
+
+  .footer-column {
+      flex: 1 1 100%;
+      text-align: center;
+      margin-bottom: 20px;
+  }
+  .newsletter-form {
+      align-items: center;
+  }
+
+  .newsletter-form input {
+      width: 100%;
+      max-width: 300px;
+  }
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Whale Digital Studios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Contact/contact.css"> <!-- Link to contact.css -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../Contact/contact.js"></script> <!-- Link to contact.js -->
+</head>
+<body>
+    <!-- Header Section (Copied from Home Page) -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="../index.html"> <!-- Link to home page -->
+                    <img src="../assets/images/logo.png" alt="Whale Digital Studios Logo" height="50">
+                </a>
+
+                <!-- Toggler Button for Mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Home</a> <!-- Link to home page -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Services/services.html">Services</a> <!-- Link to services page -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Blogs/blog.html">Blog</a> <!-- Link to blog page -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../Contact/contact.html">Contact</a> <!-- Link to contact page -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+ 
+<!-- Section 1: Landing Page with Cover Image and Title -->
+<section class="contact-landing">
+    <div class="contact-landing-content">
+        <h1 class="contact-title">Contact Us</h1> <!-- Added class for easy styling -->
+    </div>
+</section>
+
+    <!-- Section 2: Contact Details and Feedback Form -->
+    <section class="contact-details-form">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Left Side: Contact Details -->
+                <div class="contact-details">
+                    <h2>Get in Touch</h2>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +254 726 304 652</li>
+                        <li>+254 712 275 310</li>
+                        <li><i class="fas fa-envelope"></i> whaledigital22@gmail.com</li>
+                        <li> info@whaledigitalstudios.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Westerwelle Startup Haus Mombasa</li>
+                        <li>Mombasa Mall, Mwembe Tayari, Mombasa</li>
+                    </ul>
+                </div>
+
+                <!-- Right Side: Feedback Form -->
+                <div class="feedback-form">
+                    <h2>Share Your Feedback</h2>
+                    <form id="feedbackForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Google Maps Embed -->
+    <section class="contact-map">
+        <div class="container">
+            <h2>Our Location</h2>
+            <div class="map-container">
+                <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8197680677254!2d39.667156773971755!3d-4.057143495916592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x184013d922c5359b%3A0xc20124be1faca15d!2sWesterwelle%20Startup%20Haus%20Mombasa!5e0!3m2!1sen!2ske!4v1738493054858!5m2!1sen!2ske" 
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+        </div>
+    </section>
+
+ <!-- Footer Section -->
+ <footer class="footer-section">
+    <div class="container">
+        <!-- Top Row: Five Columns -->
+        <div class="footer-top-row">
+            <!-- Column 1: Hyperlinks to Pages -->
+            <div class="footer-column">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/Services/services.html">Services</a></li>
+                    <li><a href="/Blogs/blog.html">Blog</a></li>
+                    <li><a href="/Contact/contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 2: Quick Links to Services -->
+            <div class="footer-column">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="/Services/services.html#website-development">Website Development</a></li>
+                    <li><a href="/Services/services.html#ux-ui-design">UX/UI Design</a></li>
+                    <li><a href="/Services/services.html#business-software">Business Software Systems</a></li>
+                    <li><a href="/Services/services.html#mobile-app-development">Mobile App Development</a></li>
+                </ul>
+            </div>
+
+         <!-- Column 3: Company Name, Logo, and Slogan -->
+<div class="footer-column">
+    <img src="services-images/logo.png" alt="Whale Digital Studios Logo" class="footer-logo">
+</div>
+
+            <!-- Column 4: Contacts and Location -->
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Westerwelle Startup Haus-Mombasa, 3rd Floor Mombasa Mall.</li>
+                    <li><i class="fas fa-phone"></i> +254 726 304 652</li>
+                    <li><i class="fas fa-envelope"></i> whaledigital22@gmail.com</li>
+                </ul>
+            </div>
+
+<!-- Column 5: Newsletter and Social Media -->
+<div class="footer-column">
+    <h4>Subscribe to Our Newsletter</h4>
+    <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit">Subscribe</button>
+    </form>
+    <div class="social-media">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/whaledigitalstudios/" class="social-icon" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            
+            <a href="https://x.com/WHALEDIGITALINC" class="social-icon" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+            
+            <a href="https://www.instagram.com/whaledigitalstudios/" class="social-icon" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            
+            <a href="https://www.linkedin.com/company/101569789/admin/dashboard/" class="social-icon" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>      
+        </div>
+    </div>
+</div>
+
+        <!-- Bottom Row: Copyright Section -->
+        <div class="footer-bottom-row">
+            <div class="copyright">
+                &copy; 2025 Whale Digital Studios. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- JavaScript for Form Submission -->
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for your feedback! We will get back to you soon.');
+            e.target.reset(); // Reset the form
+        });
+    </script>
+</body>
+</html>

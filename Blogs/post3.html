@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Blog Post</title>
+  <link rel="stylesheet" href="/Blogs/create-blog.css">
+</head>
+<body>
+  <header>
+    <h1>Create a New Blog Post</h1>
+  </header>
+
+  <main>
+    <form id="blog-form">
+      <!-- Blog Title -->
+      <label for="title">Title of the Blog:</label>
+      <input type="text" id="title" name="title" required>
+
+      <!-- Cover Image -->
+      <label for="cover-image">Cover Image URL:</label>
+      <input type="url" id="cover-image" name="cover-image" required>
+
+      <!-- Metadata -->
+      <label for="metadata">Metadata (Brief Intro):</label>
+      <textarea id="metadata" name="metadata" required></textarea>
+
+      <!-- Blog Content -->
+      <label for="content">Blog Content:</label>
+      <textarea id="content" name="content" rows="10" required></textarea>
+
+      <!-- Content Images (Optional, Max 6) -->
+      <label for="images">Content Images (Optional, Max 6):</label>
+      <input type="url" id="image1" name="image1" placeholder="Image 1 URL">
+      <input type="url" id="image2" name="image2" placeholder="Image 2 URL">
+      <input type="url" id="image3" name="image3" placeholder="Image 3 URL">
+      <input type="url" id="image4" name="image4" placeholder="Image 4 URL">
+      <input type="url" id="image5" name="image5" placeholder="Image 5 URL">
+      <input type="url" id="image6" name="image6" placeholder="Image 6 URL">
+
+      <!-- Submit Button -->
+      <button type="submit">Post</button>
+    </form>
+  </main>
+
+  <script src="/Blogs/create-blog.js"></script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Blog Template</title>
+    <meta name="author" content="David Grzyb">
+    <meta name="description" content="">
+
+    <!-- Tailwind -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Blogs/blog-post.css"> <!-- Link to blog-post.css -->  
+   <style>
+        @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+        .font-family-karla {
+            font-family: karla;
+        }
+    </style>
+    <script src="../Blogs/blog-post.js"></script> 
+
+    <!-- AlpineJS -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+</head>
+<body class="bg-white font-family-karla">
+
+    
+ <!-- Header Section -->
+ <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="blog-assets/logo.png" alt="Whale Digital Studios Logo" height="50">
+            </a>
+
+            <!-- Toggler Button for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home" aria-current="page">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Blog</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>  
+            </div>
+        </div>
+    </nav>
+</header>
+    <!-- Text Header -->
+    <header class="w-full container mx-auto">
+        <div class="flex flex-col items-center py-12">
+            <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="#">
+             Latest Posts
+            </a>
+            <p class="text-lg text-gray-600">
+               Your Guide to the Digital World
+            </p>
+        </div>
+    </header>
+
+    <!-- Topic Nav -->
+    <nav class="w-full py-4 border-t border-b bg-gray-100" x-data="{ open: false }">
+        <div class="block sm:hidden">
+            <a
+                href="#"
+                class="block md:hidden text-base font-bold uppercase text-center flex justify-center items-center"
+                @click="open = !open"
+            >
+                Topics <i :class="open ? 'fa-chevron-down': 'fa-chevron-up'" class="fas ml-2"></i>
+            </a>
+        </div>
+        <div :class="open ? 'block': 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
+            <div class="w-full container mx-auto flex flex-col sm:flex-row items-center justify-center text-sm font-bold uppercase mt-0 px-6 py-2">
+                <a href="#" class="hover:bg-green-400 rounded py-2 px-4 mx-2">Technology</a>
+                <a href="#" class="hover:bg-green-400 rounded py-2 px-4 mx-2">Business</a>
+                <a href="#" class="hover:bg-green-400 rounded py-2 px-4 mx-2">Tech Trends</a>
+                <a href="#" class="hover:bg-green-400 rounded py-2 px-4 mx-2">Design & Branding</a>
+                <a href="#" class="hover:bg-green-400 rounded py-2 px-4 mx-2">Latest News</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mx-auto flex flex-wrap py-6">
+
+        <!-- Post Section -->
+        <section class="w-full md:w-2/3 flex flex-col items-center px-3">
+
+            <article class="flex flex-col shadow my-4">
+                <!-- Article Image -->
+                <a href="#" class="hover:opacity-75">
+                    <img src="blog-assets/blog1.png">
+                </a>
+                <div class="bg-white flex flex-col justify-start p-6">
+                    <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">Technology</a>
+                    <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">Should You Buy a .co.ke or .com Domain Name if You Are in Kenya?</a>
+                    <p href="#" class="text-sm pb-8">
+                        By <a href="#" class="font-semibold hover:text-gray-800">John Gitonga</a>, Published on January 12th, 2025
+                    </p>
+                    <h1 class="text-2xl font-bold pb-3">Introduction</h1>
+                    <p class="pb-3">If you're considering building a website in Kenya, one of the first questions that may come to mind is, "How much will it cost?" The answer depends on several factors, including the type of website you want, its features, and the expertise of the developer or agency you choose. In this blog, we’ll break down the costs associated with building a website in Kenya and what you can expect at each stage.</p>
+                    <h1 class="text-2xl font-bold pb-3">What is a Domain Name?</h1>
+                    <p class="pb-3">A domain name is your website’s unique address on the internet. Think of it as your digital home. The extension, like .co.ke or .com, is called a top-level domain (TLD).
+                        <p>•	.com: A global domain used worldwide.</p>
+                        <p>•	.co.ke: A country-specific domain for Kenya.</p>
+                        .</p>
+                    <p class="pb-3 italic">1. Target Audience
+                        <p>•	.co.ke: Ideal if your website primarily serves a Kenyan audience. It shows that your business is local, which can build trust among Kenyan users.</p>
+                        <p>•	.com: Perfect for businesses targeting an international audience or aiming for a global presence.
+                        </p>
+                    <p class="pb-3 italic">2. SEO (Search Engine Optimization)
+                        <p>•	.co.ke: Can improve local SEO, helping your website rank higher in searches within Kenya.</p>
+                        <p>•	.com: Offers global SEO advantages, making it easier to rank in searches worldwide.
+                        </p>
+                    <p class="pb-3 italic">3. Availability</p>
+                        <p>•	.co.ke: Often has more available options, as it’s less commonly used than .com. You’re more likely to get your desired domain name.</p>
+                        <p>•	.com: Highly popular, which means many domain names may already be taken.</p>
+                        
+                    <p class="pb-3 italic">4. Cost
+                            <p>•	.co.ke: Generally more affordable in Kenya.</p>
+                            <p>•	.com: Slightly more expensive, especially when purchased from international domain registrars.
+                            </p>
+                    <p class="pb-3 italic">5. Trust and Credibility</p>
+                       <p>•	.co.ke: Builds trust with Kenyan users, as it shows your commitment to the local market.</p>
+                       <p>•	.com: Universally recognized and trusted, making it suitable for a broader audience.
+                        </p>
+                    <p class="text-2xl font-bold pb-3 italic">When to Choose .co.ke
+                       <p>•	You are targeting Kenyan customers or clients.</p>
+                       <p>•	Your business is based in Kenya and focuses on local services.</p>
+                       <p> •	You want a domain name that reflects your Kenyan identity.
+                        </p>
+                    <p class="text-2xl font-bold pb-3 italic">When to Choose .com
+                       <p> •	Your audience extends beyond Kenya or you plan to expand globally.</p>
+                       <p> •	You want a domain name with universal appeal.</p>
+                       <p>•	You can’t find your preferred domain name under .co.ke.
+                        </p>
+                    <p class="pb-3 italic">Why Not Both?</p>
+                    <p> For businesses with a local presence but global ambitions, buying both .co.ke and .com can be a smart move. This prevents others from using your brand name with a different extension and allows you to target both local and international audiences effectively.
+                        </p>
+                    <h1 class="text-2xl font-bold pb-3">How to Buy a Domain in Kenya</h1>
+                        <p>1.	Choose a Domain Registrar</p>
+                        Look for trusted domain providers like Webhost Experts Kenya, Truehost, or international companies like GoDaddy and Namecheap.
+                       <p>2.	Search for Your Domain Name</p>
+                        Use the registrar's search tool to check if your desired domain is available.
+                       <p>3.	Register and Pay</p>
+                        Complete the purchase, and don’t forget to renew your domain annually to keep it active.
+                        
+                        It is important to note that you will need to buy a hosting package alongside the domain name if you do not already have hosting so that your domain can be found online as the link to a website. 
+                        
+                        </p>
+
+                    <h1 class="text-2xl font-bold pb-3">Final Thoughts</h1>
+                    <p class="pb-3">The choice between a .co.ke and a .com domain depends on your target audience and goals. If your focus is on Kenya, a .co.ke domain is perfect. For international ambitions, .com is the way to go. Either way, ensure your domain reflects your brand and is easy to remember.
+                        Need help choosing the right domain or hosting services in Kenya? Contact Whale Digital Studios today, and we’ll guide you through the process of setting up your online presence!
+                        </p>
+                </div>
+            </article>
+
+            <div class="w-full flex pt-6">
+                <a href="#" class="w-1/2 bg-white shadow hover:shadow-md text-left p-6">
+                    <p class="text-lg text-blue-800 font-bold flex items-center"><i class="fas fa-arrow-left pr-1"></i> Previous</p>
+                    <p class="pt-2">The Cost of Building a Website in Kenya: What to Expect</p>
+                </a>
+                <a href="#" class="w-1/2 bg-white shadow hover:shadow-md text-right p-6">
+                    <p class="text-lg text-blue-800 font-bold flex items-center justify-end">Next <i class="fas fa-arrow-right pl-1"></i></p>
+                    <p class="pt-2">How to Choose the Right Business Software for Your Company</p>
+                </a>
+            </div>
+
+            <div class="w-full flex flex-col text-center md:text-left md:flex-row shadow bg-white mt-10 mb-10 p-6">
+                <div class="w-full md:w-1/5 flex justify-center md:justify-start pb-4">
+                    <img src="blog-assets/John.jpg" class="rounded-full shadow h-32 w-32">
+                </div>
+                <div class="flex-1 flex flex-col justify-center md:justify-start">
+                    <p class="font-semibold text-2xl">John</p>
+                    <p class="pt-2">I am a software developer by day and a tech blogger by night. I love all things related to tech </p>
+                    <div class="flex items-center justify-center md:justify-start text-2xl no-underline text-blue-800 pt-4">
+                        <a href="https://www.linkedin.com/in/john-g-kaguongo" class="social-icon" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>                        
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Sidebar Section -->
+        <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
+
+            <div class="w-full bg-white shadow flex flex-col my-4 p-6">
+                <p class="text-xl font-semibold pb-5">About Us</p>
+                <p class="pb-2">  
+                    Our blog simplifies technology for businesses and individuals by breaking down key topics in website development, business software, and digital marketing. From choosing the right domain to building powerful marketing strategies, we provide practical insights and expert advice to help you navigate the digital world with confidence. 🚀</p>
+                <a href="#" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
+                    Get to know us
+                </a>
+            </div>
+
+            <div class="w-full bg-white shadow flex flex-col my-4 p-6">
+                <p class="text-xl font-semibold pb-5">Instagram</p>
+                <div class="grid grid-cols-3 gap-3">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=1">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=2">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=3">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=4">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=5">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=6">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=7">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=8">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=9">
+                </div>
+                <a href="https://www.instagram.com/whaledigitalstudios" target="_blank" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-6">
+                    <i class="fab fa-instagram mr-2"></i> Follow @whaledigitalstudios
+                </a>                
+            </div>
+
+        </aside>
+
+    </div>
+
+        <!-- Footer Section -->
+<footer class="footer-section">
+    <div class="container">
+        <!-- Top Row: Five Columns -->
+        <div class="footer-top-row">
+            <!-- Column 1: Hyperlinks to Pages -->
+            <div class="footer-column">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 2: Quick Links to Services -->
+            <div class="footer-column">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="#services">Website Development</a></li>
+                    <li><a href="#services">UX/UI Design</a></li>
+                    <li><a href="#services">Business Software Systems</a></li>
+                    <li><a href="#services">Digital Marketing</a></li>
+                </ul>
+            </div>
+
+         <!-- Column 3: Company Name, Logo, and Slogan -->
+<div class="footer-column">
+    <img src="blog-assets/logo.png" alt="Whale Digital Studios Logo" class="footer-logo">
+</div>
+
+            <!-- Column 4: Contacts and Location -->
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Westerwell Startup Haus - Mombasa</li>
+                    <li><i class="fas fa-phone"></i> +254 726 304 652</li>
+                    <li><i class="fas fa-envelope"></i> whaledigital22@gmail.com</li>
+                </ul>
+            </div>
+
+<!-- Column 5: Newsletter and Social Media -->
+<div class="footer-column">
+    <h4>Subscribe to Our Newsletter</h4>
+    <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit">Subscribe</button>
+    </form>
+    <div class="social-media">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/whaledigitalstudios/" class="social-icon" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            
+            <a href="https://x.com/WHALEDIGITALINC" class="social-icon" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+            
+            <a href="https://www.instagram.com/whaledigitalstudios/" class="social-icon" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            
+            <a href="https://www.linkedin.com/company/101569789/admin/dashboard/" class="social-icon" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>            
+        </div>
+    </div>
+</div>
+
+        <!-- Bottom Row: Copyright Section -->
+        <div class="footer-bottom-row">
+            <div class="copyright">
+                &copy; 2025 Whale Digital Studios. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script>
+        function getCarouselData() {
+            return {
+                currentIndex: 0,
+                images: [
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=1',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=2',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=3',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=4',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=5',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=6',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=7',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=8',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=9',
+                ],
+                increment() {
+                    this.currentIndex = this.currentIndex === this.images.length - 6 ? 0 : this.currentIndex + 1;
+                },
+                decrement() {
+                    this.currentIndex = this.currentIndex === this.images.length - 6 ? 0 : this.currentIndex - 1;
+                },
+            }
+        }
+    </script>
+
+</body>
+</html>
