@@ -1,48 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Create Blog Post</title>
-  <link rel="stylesheet" href="/Blogs/create-blog.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <meta name="author" content="John Gitonga">
+    <meta name="description" content="">
+
+    <!-- Tailwind -->
+    <link rel="stylesheet" href="../Blogs/blog-post.css"> <!-- Link to blog.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+        .font-family-karla {
+            font-family: karla;
+        }
+            </style>
+    <script src="/Blogs/blogs.js"></script> 
+
+    <!-- AlpineJS -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
 </head>
-<body>
-  <header>
-    <h1>Create a New Blog Post</h1>
-  </header>
+<body class="bg-white font-family-karla">
 
-  <main>
-    <form id="blog-form">
-      <!-- Blog Title -->
-      <label for="title">Title of the Blog:</label>
-      <input type="text" id="title" name="title" required>
 
-      <!-- Cover Image -->
-      <label for="cover-image">Cover Image URL:</label>
-      <input type="url" id="cover-image" name="cover-image" required>
+<!-- Header Section -->
+<header class="header">
+  <nav class="navbar">
+    <div class="flex justify-between items-center container">
+      <!-- Logo Section -->
+      <a href="#" class="navbar-brand">
+        <img src="blog-assets/logo.png" alt="Whale Digital Studios Logo">
+      </a>
+      
+      <!-- Toggler Button for Mobile -->
+      <button class="navbar-toggler" onclick="toggleMenu()">
+        ☰
+    </button>
+    
+    
+      <!-- Navigation Menu -->
+      <ul class="navbar-nav flex gap-4">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">Services</a></li>
+        <li><a href="#services" class="nav-link">Blog</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
-      <!-- Metadata -->
-      <label for="metadata">Metadata (Brief Intro):</label>
-      <textarea id="metadata" name="metadata" required></textarea>
 
-      <!-- Blog Content -->
-      <label for="content">Blog Content:</label>
-      <textarea id="content" name="content" rows="10" required></textarea>
+    <div class="tailwind-content">
+     <!-- All content that needs Tailwind CSS -->
+   
+       <!-- Text Header -->
+       <section class="w-full container mx-auto">
+         <div class="flex flex-col items-center py-12">
+           <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="#">
+            Recent Post
+           </a>
+           <p class="text-lg text-gray-600">
+             Your Guide to the Digital World
+           </p>
+         </div>
+       </section>
+       
 
-      <!-- Content Images (Optional, Max 6) -->
-      <label for="images">Content Images (Optional, Max 6):</label>
-      <input type="url" id="image1" name="image1" placeholder="Image 1 URL">
-      <input type="url" id="image2" name="image2" placeholder="Image 2 URL">
-      <input type="url" id="image3" name="image3" placeholder="Image 3 URL">
-      <input type="url" id="image4" name="image4" placeholder="Image 4 URL">
-      <input type="url" id="image5" name="image5" placeholder="Image 5 URL">
-      <input type="url" id="image6" name="image6" placeholder="Image 6 URL">
+   
+ <!-- Topic Nav -->
+ <nav class="w-full py-4 border-t border-b bg-gray-100" x-data="{ open: false }">
+    <div class="block sm:hidden">
+        <a
+            href="#"
+            class="block md:hidden text-base font-bold uppercase text-center flex justify-center items-center"
+            @click="open = !open"
+        >
+            Topics <i :class="open ? 'fa-chevron-down': 'fa-chevron-up'" class="fas ml-2"></i>
+        </a>
+    </div>
+    <div :class="open ? 'block': 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
+        <div class="w-full container mx-auto flex flex-col sm:flex-row items-center justify-center text-sm font-bold uppercase mt-0 px-6 py-2">
+            <a href="#" class="hover:bg-green-400 rounded py-2 px-4 mx-2">Technology</a>
+            <a href="#" class="hover:bg-green-400 rounded py-2 px-4 mx-2">Business</a>
+            <a href="#" class="hover:bg-green-400 rounded py-2 px-4 mx-2">Tech Trends</a>
+            <a href="#" class="hover:bg-green-400 rounded py-2 px-4 mx-2">Design & Branding</a>
+            <a href="#" class="hover:bg-green-400 rounded py-2 px-4 mx-2">Latest News</a>
+        </div>
+    </div>
+</nav>
 
-      <!-- Submit Button -->
-      <button type="submit">Post</button>
-    </form>
-  </main>
 
-  <script src="/Blogs/create-blog.js"></script>
+<div class="container mx-auto flex flex-wrap py-6">
+    <div class="tailwind-content mt-24">
+
+    <!-- Post Section -->
+    <section class="w-full flex flex-col items-center px-3">
+
+        <article class="flex flex-col shadow my-4">
+            <!-- Article Image -->
+            <a href="#" class="hover:opacity-75">
+                <img src="blog-assets/blog3.png" alt="Blog Image" width="600" style="border: 1px solid black;">
+            </a>
+            <div class="bg-white flex flex-col justify-start p-6 px-6 text-left"> <!-- Added px-6 and text-left -->
+                <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">Technology</a>
+                <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">How to Choose the Right Business Software for Your Company</a>
+                <p href="#" class="text-sm pb-8">
+                    By <a href="#" class="font-semibold hover:text-gray-800">Jack Muhuri</a>, Published on January 12th, 2025
+                </p>
+                <h1 class="text-2xl font-bold pb-3">Introduction</h1>
+                <p class="pb-3">In today’s digital age, business software is essential for streamlining operations, improving productivity, and staying competitive. However, choosing the right software can be overwhelming with so many options available. Selecting the wrong one could lead to wasted resources, inefficiencies, and frustration. To help you make the right choice, we’ve outlined the key factors to consider when selecting business software for your company.</p>
+                <h1 class="text-2xl font-bold pb-3">1. Understand Your Business Needs</h1>
+                <p class="pb-3">Before exploring software options, identify the specific problems you want the software to solve.</p>                
+                   <p>•	Are you looking to manage inventory, streamline communication, or handle customer relationships?</p>
+                    <p>•	Do you need software for a specific department or a solution that integrates company-wide?
+                      Clearly outlining your goals will help narrow down your choices</p>
+               
+
+                <p class="text-2xl font-bold pb-3">2. Assess Your Budget</p>
+                    <p>The cost of business software can vary widely. Consider the following:</p>
+                    <p>•	One-Time Purchase vs Subscription: Some software requires a one-time fee, while others have monthly or annual subscriptions.</p>
+                      <p>•	Hidden Costs: Factor in expenses like implementation, training, and ongoing support.</p>
+                      <p>•	Scalability: Choose software that fits your budget now but can scale as your business grows.
+                      </p>
+                     
+                     
+                 <p class="text-2xl font-bold pb-3">3. Research Available Options</p>
+                <p class="pb-3 italic">•	Cloud-Based vs On-Premise: </p>
+                    <p>o	Cloud-Based: Accessible from anywhere, often subscription-based, with lower upfront costs.</p>
+                   <p>o	On-Premise: Requires installation on your hardware, offering more control but higher initial expenses
+                   </p>
+                <p class="pb-3 italic">•	Industry-Specific vs General Software: </p>
+                    <p>Industry-specific software might better address your needs. For example, an accounting firm might benefit from tailored accounting software.</p>
+
+                 <p class="text-2xl font-bold pb-3">4. Look for Essential Features</p>
+                 <p>The right software should have features that align with your business requirements. Consider:</p>
+                    <p>•	Integration: Can it integrate with existing tools like email, CRM, or ERP systems?</p>
+                     <p>•	User-Friendly Interface: Is the software intuitive and easy for your team to use?</p>
+                      <p>•	Customization: Can the software be tailored to meet your specific needs?</p>
+                     <p>•	Analytics: Does it provide valuable insights through reporting and data analysis?
+                      </p>
+
+
+                <p class="text-2xl font-bold pb-3">5. Evaluate Vendor Reputation</p>
+                    <p>Choosing the right vendor is just as important as the software itself.</p>
+                    <p>•	Reviews and Ratings: Check reviews on platforms like Capterra or G2.</p>
+                    <p>•	Customer Support: Ensure the vendor provides reliable support through chat, email, or phone.</p>
+                    <p>•	Track Record: Opt for vendors with a proven track record of reliability and innovation.</p>
+
+                <p class="text-2xl font-bold pb-3">6. Test the Software</p>
+                    <p> Most vendors offer free trials or demos. Use these opportunities to:</p>
+                    <p>•	Explore the software’s functionality.</p>
+                    <p>•	Assess ease of use and compatibility with your processes.</p>
+                    <p>•	Gather feedback from team members who will use the software.</p>
+                
+                <p class="text-2xl font-bold pb-3">7. Plan for Training and Implementation</p>
+                    <p class="pb-3 ">Even the best software won’t deliver results if your team isn’t trained to use it effectively.</p>
+                    <p>•	Onboarding Support: Check if the vendor provides training resources or onboarding assistance.</p>
+                    <p> •	Adaptation Period: Allocate time for your team to get familiar with the new tool.</p>
+              
+              
+                <h1 class="text-2xl font-bold pb-3">8. Consider Security and Compliance</h1>
+                    <p>With increasing cyber threats, security is paramount.</p>
+                <p>•	Ensure the software complies with industry regulations.</p>
+                  <p>•	Look for features like data encryption, secure user authentication, and regular updates.</p>
+
+               <h1 class="text-2xl font-bold pb-3">9. Think Long-Term</h1>
+                <p class="pb-3">The right software should grow with your company. Choose solutions that:</p>
+                <p>•	Offer scalable plans or features.</p>
+                 <p> •	Regularly update to stay compatible with new technologies.</p>
+                  <p>•	Provide flexibility to add users or modules as your business expands.</p>
+
+               <h1 class="text-2xl font-bold pb-3">10. Seek Expert Advice</h1>
+               <p>If you’re unsure, consult with IT experts or software consultants. They can analyze your needs and recommend solutions that match your business goals.</p>
+           
+               <h1 class="text-2xl font-bold pb-3">Conclusion</h1>
+               <p>Choosing the right business software is a crucial decision that can significantly impact your company’s efficiency and success. By understanding your needs, researching options, and planning for the long term, you can select a solution that drives your business forward.
+                At Whale Digital Studios, we specialize in creating custom business software tailored to your needs. Whether you’re looking for inventory management, CRM systems, or workflow automation, our team is here to help. Contact us today for a free consultation!</p>
+
+               
+              </div>
+        </article>
+
+        <!-- Pagination Links -->
+        <div class="w-full flex pt-6">
+            <a href="#" class="w-1/2 bg-white shadow hover:shadow-md text-left p-6">
+                <p class="text-lg text-blue-800 font-bold flex items-center"><i class="fas fa-arrow-left pr-1"></i> Previous</p>
+                <a href="/Blogs/post.html" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-6">
+                  The Cost of Building a Website in Kenya: What to Expect
+                </a>
+                            </a>
+            <a href="#" class="w-1/2 bg-white shadow hover:shadow-md text-right p-6">
+                <p class="text-lg text-blue-800 font-bold flex items-center justify-end">Next <i class="fas fa-arrow-right pl-1"></i></p>
+                <a href="/Blogs/post.html" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-6">
+                  How to Choose the Right Business Software for Your Company
+                </a>
+            </a>
+        </div>
+
+        <!-- Author Info Section -->
+        <div class="w-full flex flex-col text-center md:text-left md:flex-row shadow bg-white mt-10 mb-10 p-6">
+            <div class="w-full md:w-1/5 flex justify-center md:justify-start pb-4">
+                <img src="blog-assets/Jack.png" class="rounded-full shadow h-32 w-32">
+            </div>
+            <div class="flex-1 flex flex-col justify-center md:justify-start">
+                <p class="font-semibold text-2xl">Jackson</p>
+                <p class="pt-2">I am a Data scientist, ML and DL Expert and Techpreneuer</p>
+                <div class="flex items-center justify-center md:justify-start text-2xl no-underline text-blue-800 pt-4">
+                    <a href="https://www.linkedin.com/in/john-g-kaguongo" class="social-icon" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>                        
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+</div>
+
+  <!-- Footer Section -->
+<footer class="footer-section">
+  <div class="container">
+      <!-- Top Row: Five Columns -->
+      <div class="footer-top-row">
+          <!-- Column 1: Hyperlinks to Pages -->
+          <div class="footer-column">
+              <ul>
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="Services/services.html">Services</a></li>
+                  <li><a href="Blogs/blog.html">Blog</a></li>
+                  <li><a href="Contact/contact.html">Contact</a></li>
+              </ul>
+          </div>
+
+          <!-- Column 2: Quick Links to Services -->
+          <div class="footer-column">
+              <h4>Our Services</h4>
+              <ul>
+                  <li><a href="Services/services.html#website-development">Website Development</a></li>
+                  <li><a href="Services/services.html#ux-ui-design">UX/UI Design</a></li>
+                  <li><a href="Services/services.html#business-software">Business Software Systems</a></li>
+                  <li><a href="Services/services.html#mobile-app-development">Mobile App Development</a></li>
+              </ul>
+          </div>
+
+       <!-- Column 3: Company Name, Logo, and Slogan -->
+       <div class="footer-column">
+          <a href="index.html">
+              <img src="blog-assets/logo.png" alt="Whale Digital Studios Logo" class="footer-logo">
+          </a>
+      </div>       
+
+          <!-- Column 4: Contacts and Location -->
+          <div class="footer-column">
+              <h4>Contact Us</h4>
+              <ul>
+                  <li><i class="fas fa-map-marker-alt"></i> Westerwelle Startup Haus-Mombasa, 3rd Floor Mombasa Mall.</li>
+                  <li><i class="fas fa-phone"></i> +254 726 304 652</li>
+                  <li><i class="fas fa-envelope"></i> whaledigital22@gmail.com</li>
+              </ul>
+          </div>
+
+<!-- Column 5: Newsletter and Social Media -->
+<div class="footer-column">
+  <h4>Subscribe to Our Newsletter</h4>
+  <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email address" required>
+      <button type="submit">Subscribe</button>
+  </form>
+  <div class="social-media">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+          <a href="https://www.facebook.com/whaledigitalstudios/" class="social-icon" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+          </a>
+          
+          <a href="https://x.com/WHALEDIGITALINC" class="social-icon" target="_blank">
+              <i class="fab fa-twitter"></i>
+          </a>
+          
+          <a href="https://www.instagram.com/whaledigitalstudios/" class="social-icon" target="_blank">
+              <i class="fab fa-instagram"></i>
+          </a>
+          
+          <a href="https://www.linkedin.com/company/101569789/admin/dashboard/" class="social-icon" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
+          </a>            
+      </div>
+  </div>
+</div>
+
+      <!-- Bottom Row: Copyright Section -->
+      <div class="footer-bottom-row">
+          <div class="copyright">
+              &copy; 2025 Whale Digital Studios. All rights reserved.
+          </div>
+      </div>
+  </div>
+</footer>
+    
+
+    <script>
+        function getCarouselData() {
+            return {
+                currentIndex: 0,
+                images: [
+                    'https://img.freepik.com/free-photo/young-multiethnic-international-romantic-couple-outdoors-meadow-sunny-summer-day-african-american-man-caucasian-woman-having-picnic-together-concept-relationship-summertime_155003-23118.jpg?t=st=1738598977~exp=1738602577~hmac=9c3eba91227a71186a47e7db71b61a4c64d5a5c31514b8cea407756f9ed2142f&w=996',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=2',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=3',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=4',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=5',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=6',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=7',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=8',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=9',
+                ],
+                increment() {
+                    this.currentIndex = this.currentIndex === this.images.length - 6 ? 0 : this.currentIndex + 1;
+                },
+                decrement() {
+                    this.currentIndex = this.currentIndex === this.images.length - 6 ? 0 : this.currentIndex - 1;
+                },
+            }
+        }
+    </script>
+
 </body>
 </html>

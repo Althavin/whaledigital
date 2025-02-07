@@ -1,136 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Page</title>
-  <link rel="stylesheet" href="../Blogs/blogs.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <meta name="author" content="John Gitonga">
+    <meta name="description" content="">
+
+    <!-- Tailwind -->
+    <link rel="stylesheet" href="../Blogs/blog-post.css"> <!-- Link to blog.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+        .font-family-karla {
+            font-family: karla;
+        }
+            </style>
+    <script src="/Blogs/blogs.js"></script> 
+
+    <!-- AlpineJS -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="bg-white font-family-karla">
+
+
 <!-- Header Section -->
 <header class="header">
-  <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-      <div class="container">
-          <!-- Logo -->
-          <a class="navbar-brand" href="#">
-              <img src="blog-assets/logo.png" alt="Whale Digital Studios Logo" height="50">
-          </a>
-
-          <!-- Toggler Button for Mobile -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <!-- Navigation Links -->
-          <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                  <li class="nav-item">
-                      <a class="nav-link active" href="#index.html" aria-current="page">Home</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#services.html">Services</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#blog.html">Blog</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#contact.html">Contact</a>
-                  </li>
-              </ul>
-
-              <!-- Get In Touch Button -->
-              <a href="#get-in-touch" class="btn btn-primary ms-lg-3">GET IN TOUCH</a>
-          </div>
-      </div>
+  <nav class="navbar">
+    <div class="flex justify-between items-center container">
+      <!-- Logo Section -->
+      <a href="#" class="navbar-brand">
+        <img src="blog-assets/logo.png" alt="Whale Digital Studios Logo">
+      </a>
+      
+      <!-- Toggler Button for Mobile -->
+      <button class="navbar-toggler" onclick="toggleMenu()">
+        ☰
+    </button>
+    
+    
+      <!-- Navigation Menu -->
+      <ul class="navbar-nav flex gap-4">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">Services</a></li>
+        <li><a href="#services" class="nav-link">Blog</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 </header>
 
-<!-- Blogs Section -->
-<section class="blogs">
-  <h1>Blog</h1>
-  <div class="search-bar">
-    <input type="text" id="search-input" placeholder="Search blogs...">
-    <button id="search-button">Search</button>
-  </div>
-</section>
 
+    <div class="tailwind-content">
+     <!-- All content that needs Tailwind CSS -->
+   
+       <!-- Text Header -->
+       <section class="w-full container mx-auto">
+         <div class="flex flex-col items-center py-12">
+           <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="#">
+            Recent Post
+           </a>
+           <p class="text-lg text-gray-600">
+             Your Guide to the Digital World
+           </p>
+         </div>
+       </section>
+       
 
-  <main>
-    <div class="blog-grid">
-      <!-- Blog containers will be dynamically inserted here -->
+   
+ <!-- Topic Nav -->
+ <nav class="w-full py-4 border-t border-b bg-gray-100" x-data="{ open: false }">
+    <div class="block sm:hidden">
+        <a
+            href="#"
+            class="block md:hidden text-base font-bold uppercase text-center flex justify-center items-center"
+            @click="open = !open"
+        >
+            Topics <i :class="open ? 'fa-chevron-down': 'fa-chevron-up'" class="fas ml-2"></i>
+        </a>
     </div>
-    <button id="view-all-blogs">View All Blogs</button>
-  </main>
+    <div :class="open ? 'block': 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
+        <div class="w-full container mx-auto flex flex-col sm:flex-row items-center justify-center text-sm font-bold uppercase mt-0 px-6 py-2">
+            <a href="#" class="hover:bg-green-400 rounded py-2 px-4 mx-2">Technology</a>
+            <a href="#" class="hover:bg-green-400 rounded py-2 px-4 mx-2">Business</a>
+            <a href="#" class="hover:bg-green-400 rounded py-2 px-4 mx-2">Tech Trends</a>
+            <a href="#" class="hover:bg-green-400 rounded py-2 px-4 mx-2">Design & Branding</a>
+            <a href="#" class="hover:bg-green-400 rounded py-2 px-4 mx-2">Latest News</a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container mx-auto flex flex-wrap py-6">
+    <div class="tailwind-content mt-24">
+
+    <!-- Post Section -->
+    <section class="w-full flex flex-col items-center px-3">
+
+        <article class="flex flex-col shadow my-4">
+            <!-- Article Image -->
+            <a href="#" class="hover:opacity-75">
+                <img src="blog-assets/blog2.jpg" alt="Blog Image" width="600" style="border: 1px solid black;">
+            </a>
+            <div class="bg-white flex flex-col justify-start p-6 px-6 text-left"> <!-- Added px-6 and text-left -->
+                <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">Design & Branding</a>
+                <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">The Cost of Building a Website in Kenya: What to Expect</a>
+                <p href="#" class="text-sm pb-8">
+                    By <a href="#" class="font-semibold hover:text-gray-800">John Gitonga</a>, Published on November 12th, 2024
+                </p>
+                <h1 class="text-2xl font-bold pb-3">Introduction</h1>
+                <p class="pb-3">If you're considering building a website in Kenya, one of the first questions that may come to mind is, "How much will it cost?" The answer depends on several factors, including the type of website you want, its features, and the expertise of the developer or agency you choose. In this blog, we’ll break down the costs associated with building a website in Kenya and what you can expect at each stage.</p>
+                <h1 class="text-2xl font-bold pb-3">1. Type of Website
+                    </h1>
+                <p class="pb-3">Different websites serve different purposes, and their complexity affects the cost:</p>
+                <p class="pb-3 italic">•	Basic Websites (Ksh 20,000 – Ksh 30,000): </p>
+                <p> Ideal for individuals or small businesses needing a simple online presence, such as a portfolio or informational website.</p>
+                <p class="pb-3 italic">•	Business Websites (Ksh 30,000 – Ksh 70,000): 
+            <p>Designed for businesses looking to showcase products or services with additional features like contact forms and galleries.</p>
+            <p class="pb-3 italic">•	E-commerce Websites (Ksh 70,000 – Ksh 200,000+):</p>
+            <p>Includes online stores with product listings, payment gateways, and inventory management.</p>
+           <p class="pb-3 italic">•	Basic Websites (Ksh 20,000 – Ksh 30,000): </p>
+           <p>Ideal for individuals or small businesses needing a simple online presence, such as a portfolio or informational website.</p>
+           <p class="pb-3 italic">•	Custom Websites (Ksh 100,000 – Ksh 500,000+):</p>
+Tailored to unique business needs, often requiring advanced functionality or custom software integration.</p>
+<h1 class="text-2xl font-bold pb-3">2. Domain Name and Hosting</h1>
+            <p class="pb-3 italic">	•	Domain Name:</p>
+                      <p>o	.co.ke: Ksh 1,000 – Ksh 3,000 per year.</p>
+                       <p>o	.com: Ksh 1,500 – Ksh 5,000 per year.</p>
+            <p class="pb-3 italic">	•	Web Hosting:</p>
+                    <p>o	Shared hosting: Ksh 3,000 – Ksh 10,000 per year (basic plans).</p>
+                    <p>o	VPS or dedicated hosting: Ksh 20,000 – Ksh 100,000 per year (for large or high-traffic websites).</p>
+                    <h1 class="text-2xl font-bold pb-3"> 3. Website Design and Development</h1>
+                    <p class="pb-3 italic">•	DIY Website Builders (Ksh 5,000 – Ksh 20,000/year):</p>
+                    <p> Platforms like Wix or Squarespace are cheaper but limit customization.</p>
+                    <p class="pb-3 italic">•	Freelance Developers (Ksh 20,000 – Ksh 100,000+):</p>
+                    <p> Affordable and suitable for smaller projects.</p>
+                    <p class="pb-3 italic">•	Web Development Agencies (Ksh 50,000 – Ksh 500,000+):</p>
+                    <p>Offer professional designs, scalable solutions, and comprehensive support.</p>
+
+                <h1 class="text-2xl font-bold pb-3">4. Features and Functionality</h1>
+                    <p>Adding advanced features will increase the cost:</p>
+                    <p> •	Blogs or News Sections: Ksh 10,000 – Ksh 20,000.</p>
+                    <p>•	Online Payments (e-commerce): Ksh 20,000 – Ksh 50,000+.</p>
+                    <p>•	Custom Forms and Databases: Ksh 30,000 – Ksh 100,000+.</p>
+                    <p>•	SEO and Analytics Integration: Ksh 10,000 – Ksh 30,000.</p>
+
+              <h1 class="text-2xl font-bold pb-3">5. Maintenance and Updates</h1>
+                    <p>A website isn’t a one-time cost. You’ll need to budget for:</p>
+                      <p>•	Regular updates and security patches (Ksh 5,000 – Ksh 20,000+/year).</p>
+                      <p> •	Content updates or redesigns (Ksh 10,000 – Ksh 50,000+).</p>
+
+            <h1 class="text-2xl font-bold pb-3">Hidden Costs to Watch Out For</h1>
+                    <p> 1.	SSL Certificates: Essential for website security, costs range from Ksh 2,000 to Ksh 10,000/year.</p>
+                     <p>  2.	Third-Party Plugins or Add-Ons: Costs vary depending on the features you need.</p>
+                    <p> 3.	Training: If you need training to manage your website, some developers charge an additional fee.</p>
+            
+            
+                <h1 class="text-2xl font-bold pb-3">How to Save on Website Costs</h1>
+                    <p>•	Plan Ahead: Clearly outline your website’s goals and features to avoid unnecessary expenses.</p>
+                       <p> •	Start Small: Begin with a basic website and scale up as your business grows.</p>
+                        <p>•	Choose the Right Developer or Agency: Balance cost and quality by researching reviews and portfolios.</p>
+                        <p>•	Bundle Services: Many agencies offer discounts when you bundle domain, hosting, and development.</p>
+
+                <h1 class="text-2xl font-bold pb-3">Conclusion</h1>
+                <p class="pb-3">The cost of building a website in Kenya varies widely based on your needs and preferences. Whether you’re a small business owner, an entrepreneur, or an organization, there’s a solution for every budget.</p>
+                <p>At Whale Digital Studios, we specialize in creating affordable, premium-quality websites tailored to your needs. Contact us today to get a free quote and take the first step toward establishing your online presence!</p>
+            </div>
+        </article>
+
+        <!-- Pagination Links -->
+        <div class="w-full flex pt-6">
+            <a href="#" class="w-1/2 bg-white shadow hover:shadow-md text-left p-6">
+                <p class="text-lg text-blue-800 font-bold flex items-center"><i class="fas fa-arrow-left pr-1"></i> Previous</p>
+                <p class="pt-2">The Cost of Building a Website in Kenya: What to Expect</p>
+            </a>
+            <a href="#" class="w-1/2 bg-white shadow hover:shadow-md text-right p-6">
+                <p class="text-lg text-blue-800 font-bold flex items-center justify-end">Next <i class="fas fa-arrow-right pl-1"></i></p>
+                <p class="pt-2">How to Choose the Right Business Software for Your Company</p>
+            </a>
+        </div>
+
+        <!-- Author Info Section -->
+        <div class="w-full flex flex-col text-center md:text-left md:flex-row shadow bg-white mt-10 mb-10 p-6">
+            <div class="w-full md:w-1/5 flex justify-center md:justify-start pb-4">
+                <img src="blog-assets/John.jpg" class="rounded-full shadow h-32 w-32">
+            </div>
+            <div class="flex-1 flex flex-col justify-center md:justify-start">
+                <p class="font-semibold text-2xl">John</p>
+                <p class="pt-2">I am a software developer by day and a tech blogger by night. I love all things related to tech.</p>
+                <div class="flex items-center justify-center md:justify-start text-2xl no-underline text-blue-800 pt-4">
+                    <a href="https://www.linkedin.com/in/john-g-kaguongo" class="social-icon" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>                        
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+</div>
 
    <!-- Footer Section -->
 <footer class="footer-section">
-  <div class="container">
-      <!-- Top Row: Five Columns -->
-      <div class="footer-top-row">
-          <!-- Column 1: Hyperlinks to Pages -->
-          <div class="footer-column">
-              <ul>
-                  <li><a href="#home">Home</a></li>
-                  <li><a href="#about">About Us</a></li>
-                  <li><a href="#services">Services</a></li>
-                  <li><a href="#testimonials">Testimonials</a></li>
-                  <li><a href="#contact">Contact</a></li>
-              </ul>
-          </div>
+    <div class="container">
+        <!-- Top Row: Five Columns -->
+        <div class="footer-top-row">
+            <!-- Column 1: Hyperlinks to Pages -->
+            <div class="footer-column">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="Services/services.html">Services</a></li>
+                    <li><a href="Blogs/blog.html">Blog</a></li>
+                    <li><a href="Contact/contact.html">Contact</a></li>
+                </ul>
+            </div>
 
-          <!-- Column 2: Quick Links to Services -->
-          <div class="footer-column">
-              <h4>Our Services</h4>
-              <ul>
-                  <li><a href="#services">Website Development</a></li>
-                  <li><a href="#services">UX/UI Design</a></li>
-                  <li><a href="#services">Business Software Systems</a></li>
-                  <li><a href="#services">Digital Marketing</a></li>
-              </ul>
-          </div>
+            <!-- Column 2: Quick Links to Services -->
+            <div class="footer-column">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="Services/services.html#website-development">Website Development</a></li>
+                    <li><a href="Services/services.html#ux-ui-design">UX/UI Design</a></li>
+                    <li><a href="Services/services.html#business-software">Business Software Systems</a></li>
+                    <li><a href="Services/services.html#mobile-app-development">Mobile App Development</a></li>
+                </ul>
+            </div>
 
-       <!-- Column 3: Company Name, Logo, and Slogan -->
-<div class="footer-column">
-  <img src="blog-assets/logo.png" alt="Whale Digital Studios Logo" class="footer-logo">
-</div>
+         <!-- Column 3: Company Name, Logo, and Slogan -->
+         <div class="footer-column">
+            <a href="index.html">
+                <img src="blog-assets/logo.png" alt="Whale Digital Studios Logo" class="footer-logo">
+            </a>
+        </div>       
 
-          <!-- Column 4: Contacts and Location -->
-          <div class="footer-column">
-              <h4>Contact Us</h4>
-              <ul>
-                  <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</li>
-                  <li><i class="fas fa-phone"></i> +123 456 7890</li>
-                  <li><i class="fas fa-envelope"></i> info@whaledigitalstudios.com</li>
-              </ul>
-          </div>
+            <!-- Column 4: Contacts and Location -->
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Westerwelle Startup Haus-Mombasa, 3rd Floor Mombasa Mall.</li>
+                    <li><i class="fas fa-phone"></i> +254 726 304 652</li>
+                    <li><i class="fas fa-envelope"></i> whaledigital22@gmail.com</li>
+                </ul>
+            </div>
 
 <!-- Column 5: Newsletter and Social Media -->
 <div class="footer-column">
-  <h4>Subscribe to Our Newsletter</h4>
-  <form class="newsletter-form">
-      <input type="email" placeholder="Enter your email address" required>
-      <button type="submit">Subscribe</button>
-  </form>
-  <div class="social-media">
-      <h4>Follow Us</h4>
-      <div class="social-icons">
-          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-  </div>
+    <h4>Subscribe to Our Newsletter</h4>
+    <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit">Subscribe</button>
+    </form>
+    <div class="social-media">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/whaledigitalstudios/" class="social-icon" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            
+            <a href="https://x.com/WHALEDIGITALINC" class="social-icon" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+            
+            <a href="https://www.instagram.com/whaledigitalstudios/" class="social-icon" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            
+            <a href="https://www.linkedin.com/company/101569789/admin/dashboard/" class="social-icon" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>            
+        </div>
+    </div>
 </div>
 
-      <!-- Bottom Row: Copyright Section -->
-      <div class="footer-bottom-row">
-          <div class="copyright">
-              &copy; 2025 Whale Digital Studios. All rights reserved.
-          </div>
-      </div>
-  </div>
+        <!-- Bottom Row: Copyright Section -->
+        <div class="footer-bottom-row">
+            <div class="copyright">
+                &copy; 2025 Whale Digital Studios. All rights reserved.
+            </div>
+        </div>
+    </div>
 </footer>
 
-  <script src="../Blogs/blogs.js"></script>
+
+    <script>
+        function getCarouselData() {
+            return {
+                currentIndex: 0,
+                images: [
+                    'https://img.freepik.com/free-photo/young-multiethnic-international-romantic-couple-outdoors-meadow-sunny-summer-day-african-american-man-caucasian-woman-having-picnic-together-concept-relationship-summertime_155003-23118.jpg?t=st=1738598977~exp=1738602577~hmac=9c3eba91227a71186a47e7db71b61a4c64d5a5c31514b8cea407756f9ed2142f&w=996',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=2',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=3',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=4',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=5',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=6',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=7',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=8',
+                    'https://source.unsplash.com/collection/1346951/800x800?sig=9',
+                ],
+                increment() {
+                    this.currentIndex = this.currentIndex === this.images.length - 6 ? 0 : this.currentIndex + 1;
+                },
+                decrement() {
+                    this.currentIndex = this.currentIndex === this.images.length - 6 ? 0 : this.currentIndex - 1;
+                },
+            }
+        }
+    </script>
+
 </body>
 </html>

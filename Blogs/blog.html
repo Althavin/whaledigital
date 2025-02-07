@@ -9,7 +9,7 @@
     <meta name="description" content="">
 
     <!-- Tailwind -->
-    <link rel="stylesheet" href="../Blogs/blogs.css"> <!-- Link to blog.css -->
+    <link rel="stylesheet" href="../Blogs/blog-post.css"> <!-- Link to blog.css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
@@ -30,41 +30,47 @@
 
 <!-- Header Section -->
 <header class="header">
-    <nav class="navbar">
-        <div class="container">
-            <!-- Logo (Left) -->
-            <a class="navbar-brand" href="#">
-                <img src="blog-assets/logo.png" alt="Whale Digital Studios Logo">
-            </a>
-
-            <!-- Toggler Button for Mobile -->
-            <button class="navbar-toggler" onclick="toggleMenu()">
-                ☰
-            </button>
-
-            <!-- Navigation Menu (Right) -->
-            <ul class="navbar-nav" id="navbarNav">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">Services</a></li>
-                <li><a href="#services" class="nav-link">Blog</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+  <nav class="navbar">
+    <div class="flex justify-between items-center container">
+      <!-- Logo Section -->
+      <a href="#" class="navbar-brand">
+        <img src="blog-assets/logo.png" alt="Whale Digital Studios Logo">
+      </a>
+      
+      <!-- Toggler Button for Mobile -->
+      <button class="navbar-toggler" onclick="toggleMenu()">
+        ☰
+    </button>
+    
+    
+      <!-- Navigation Menu -->
+      <ul class="navbar-nav flex gap-4">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">Services</a></li>
+        <li><a href="#services" class="nav-link">Blog</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 </header>
 
 
+<div class="body-content mt-24">
+ <div class="tailwind-content">
+  <!-- All content that needs Tailwind CSS -->
+
     <!-- Text Header -->
-    <header class="w-full container mx-auto">
-        <div class="flex flex-col items-center py-12">
-            <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="#">
-                Our Blogs
-            </a>
-            <p class="text-lg text-gray-600">
-                Your Guide to the Digital World
-            </p>
-        </div>
-    </header>
+    <section class="w-full container mx-auto">
+      <div class="flex flex-col items-center py-12">
+        <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="#">
+          Our Blogs
+        </a>
+        <p class="text-lg text-gray-600">
+          Your Guide to the Digital World
+        </p>
+      </div>
+    </section>
+    
 
     <!-- Topic Nav -->
     <nav class="w-full py-4 border-t border-b bg-gray-100" x-data="{ open: false }">
@@ -94,56 +100,69 @@
         <!-- Posts Section -->
         <section class="w-full md:w-2/3 flex flex-col items-center px-3">
 
-            <article class="flex flex-col shadow my-4">
-                <!-- Article Image -->
-                <div class="flex justify-center">
-                <a href="#" class="hover:opacity-75">
-                    <img src="blog-assets/blog1.png">
-                </a>
-                <div class="bg-white flex flex-col justify-start p-6">
-                    <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">Technology</a>
-                    <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">Should You Buy a .co.ke or .com Domain Name if You Are in Kenya?</a>
-                    <p href="#" class="text-sm pb-3">
-                        By <a href="#" class="font-semibold hover:text-gray-800">John Gitonga</a>, Published on January 12th, 2024
+            <a href="/Blogs/post.html" class="block">
+                <article class="flex flex-col shadow my-4">
+                  <!-- Article Image -->
+                  <div class="flex justify-center">
+                    <img src="blog-assets/blog1.png" alt="Blog Image" class="hover:opacity-75">
+                  </div>
+                  <div class="bg-white flex flex-col justify-start p-6">
+                    <p class="text-blue-700 text-sm font-bold uppercase pb-4">Technology</p>
+                    <h2 class="text-3xl font-bold hover:text-gray-700 pb-4">Should You Buy a .co.ke or .com Domain Name if You Are in Kenya?</h2>
+                    <p class="text-sm pb-3">
+                      By <span class="font-semibold hover:text-gray-800">John Gitonga</span>, Published on January 12th, 2024
                     </p>
-                    <a href="#" class="pb-6">When building a website, choosing the right domain name is one of the first and most important steps. For businesses and individuals in Kenya, the choice often comes down to two options: .co.ke or .com. But which one should you choose? ...</a>
-                    <a href="#" class="uppercase text-gray-800 hover:text-black">Continue Reading <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-            <article class="flex flex-col shadow my-4">
-                <!-- Article Image -->
-                <div class="flex justify-center">
-                <a href="#" class="hover:opacity-75">
-                    <img src="blog-assets/blog2.jpg">
-                </a>
-                <div class="bg-white flex flex-col justify-start p-6">
-                    <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">Design & Branding</a>
-                    <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">The Cost of Building a Website in Kenya: What to Expect</a>
-                    <p href="#" class="text-sm pb-3">
-                        By <a href="#" class="font-semibold hover:text-gray-800">John Gitonga</a>, Published on November 12th, 2024
+                    <p class="pb-6">When building a website, choosing the right domain name is one of the first and most important steps. For businesses and individuals in Kenya, the choice often comes down to two options: .co.ke or .com. But which one should you choose? ...</p>
+                    <span class="uppercase text-gray-800 hover:text-black inline-flex items-center">
+                      Continue Reading
+                      <i class="fas fa-arrow-right ml-2"></i>
+                    </span>
+                  </div>
+                </article>
+              </a>
+              
+              <a href="/Blogs/post2.html" class="block">
+                <article class="flex flex-col shadow my-4">
+                  <!-- Article Image -->
+                  <div class="flex justify-center">
+                    <img src="blog-assets/blog2.jpg" alt="Blog Image" class="hover:opacity-75">
+                  </div>
+                  <div class="bg-white flex flex-col justify-start p-6">
+                    <p class="text-blue-700 text-sm font-bold uppercase pb-4">Design & Branding</p>
+                    <h2 class="text-3xl font-bold hover:text-gray-700 pb-4">The Cost of Building a Website in Kenya: What to Expect</h2>
+                    <p class="text-sm pb-3">
+                      By <span class="font-semibold hover:text-gray-800">John Gitonga</span>, Published on November 12th, 2024
                     </p>
-                    <a href="#" class="pb-6">If you're considering building a website in Kenya, one of the first questions that may come to mind is how much will it cost. In this blog, we’ll break down the costs associated with building a website in Kenya and what you can expect at each stage...</a>
-                    <a href="#" class="uppercase text-gray-800 hover:text-black">Continue Reading <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-            <article class="flex flex-col shadow my-4">
-                <!-- Article Image -->
-                <div class="flex justify-center">
-                <a href="#" class="hover:opacity-75">
-                    <img src="blog-assets/blog3.png">
-                </a>
-                <div class="bg-white flex flex-col justify-start p-6">
-                    <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">Business Technology</a>
-                    <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">How to Choose the Right Business Software for Your Company</a>
-                    <p href="#" class="text-sm pb-3">
-                        By <a href="#" class="font-semibold hover:text-gray-800"> John Gitonga</a>, Published on October 22nd, 2020
+                    <p class="pb-6">If you're considering building a website in Kenya, one of the first questions that may come to mind is how much will it cost. In this blog, we’ll break down the costs associated with building a website in Kenya and what you can expect at each stage...</p>
+                    <span class="uppercase text-gray-800 hover:text-black inline-flex items-center">
+                      Continue Reading
+                      <i class="fas fa-arrow-right ml-2"></i>
+                    </span>
+                  </div>
+                </article>
+              </a>
+              
+            <a href="/Blogs/post3.html" class="block">
+                <article class="flex flex-col shadow my-4">
+                  <!-- Article Image -->
+                  <div class="flex justify-center">
+                    <img src="blog-assets/blog3.png" alt="Blog Image" class="hover:opacity-75">
+                  </div>
+                  <div class="bg-white flex flex-col justify-start p-6">
+                    <p class="text-blue-700 text-sm font-bold uppercase pb-4">Business Technology</p>
+                    <h2 class="text-3xl font-bold hover:text-gray-700 pb-4">How to Choose the Right Business Software for Your Company</h2>
+                    <p class="text-sm pb-3">
+                      By <span class="font-semibold hover:text-gray-800">John Gitonga</span>, Published on October 22nd, 2020
                     </p>
-                    <a href="#" class="pb-6">In today’s digital age, business software is essential for streamlining operations, improving productivity, and staying competitive. To help you make the right choice, we’ve outlined the key factors to consider when selecting business software for your company...</a>
-                    <a href="#" class="uppercase text-gray-800 hover:text-black">Continue Reading <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <p class="pb-6">In today’s digital age, business software is essential for streamlining operations, improving productivity, and staying competitive. To help you make the right choice, we’ve outlined the key factors to consider when selecting business software for your company...</p>
+                    <span class="uppercase text-gray-800 hover:text-black inline-flex items-center">
+                      Continue Reading
+                      <i class="fas fa-arrow-right ml-2"></i>
+                    </span>
+                  </div>
+                </article>
+              </a>
+             
 
             <!-- Pagination -->
             <div class="flex items-center py-8">
@@ -169,93 +188,105 @@
             <div class="w-full bg-white shadow flex flex-col my-4 p-6">
                 <p class="text-xl font-semibold pb-5">Instagram</p>
                 <div class="grid grid-cols-3 gap-3">
+                    <img class="hover:opacity-75" src="blog-assets/SME.jpg">
                     <img class="hover:opacity-75" src="blog-assets/7-erp system.png">
-                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=2">
-                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=3">
-                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=4">
-                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=5">
-                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=6">
-                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=7">
-                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=8">
-                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=9">
+                    <img class="hover:opacity-75" src="blog-assets/DM_blog_post_image_03_guetzli-850x412.jpg">
+                    <img class="hover:opacity-75" src="blog-assets/what-is-digital-marketing.png">
+                    <img class="hover:opacity-75" src="blog-assets/pos-retail.jpg">
+                    <img class="hover:opacity-75" src="blog-assets/SMM.jpg">
                 </div>
-                <a href="#" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-6">
+                <a href="https://www.instagram.com/whaledigitalstudios/" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-6">
                     <i class="fab fa-instagram mr-2"></i> Follow @whaledigitalstudios
-                </a>
+                  </a>                  
             </div>
 
         </aside>
 
     </div>
+  </div>
+</div>
+     
+<!-- Footer Section -->
+<footer class="footer-section">
+    <div class="container">
+        <!-- Top Row: Five Columns -->
+        <div class="footer-top-row">
+            <!-- Column 1: Hyperlinks to Pages -->
+            <div class="footer-column">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="Services/services.html">Services</a></li>
+                    <li><a href="Blogs/blog.html">Blog</a></li>
+                    <li><a href="Contact/contact.html">Contact</a></li>
+                </ul>
+            </div>
 
-     <!-- Footer Section -->
-     <footer class="footer-section">
-        <div class="container">
-            <!-- Top Row: Five Columns -->
-            <div class="footer-top-row">
-                <!-- Column 1: Hyperlinks to Pages -->
-                <div class="footer-column">
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-    
-                <!-- Column 2: Quick Links to Services -->
-                <div class="footer-column">
-                    <h4>Our Services</h4>
-                    <ul>
-                        <li><a href="#services">Website Development</a></li>
-                        <li><a href="#services">UX/UI Design</a></li>
-                        <li><a href="#services">Business Software Systems</a></li>
-                        <li><a href="#services">Digital Marketing</a></li>
-                    </ul>
-                </div>
-    
-             <!-- Column 3: Company Name, Logo, and Slogan -->
-    <div class="footer-column">
-        <img src="blog-assets/logo.png" alt="Whale Digital Studios Logo" class="footer-logo">
+            <!-- Column 2: Quick Links to Services -->
+            <div class="footer-column">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="Services/services.html#website-development">Website Development</a></li>
+                    <li><a href="Services/services.html#ux-ui-design">UX/UI Design</a></li>
+                    <li><a href="Services/services.html#business-software">Business Software Systems</a></li>
+                    <li><a href="Services/services.html#mobile-app-development">Mobile App Development</a></li>
+                </ul>
+            </div>
+
+         <!-- Column 3: Company Name, Logo, and Slogan -->
+         <div class="footer-column">
+            <a href="index.html">
+                <img src="blog-assets/logo.png" alt="Whale Digital Studios Logo" class="footer-logo">
+            </a>
+        </div>       
+
+            <!-- Column 4: Contacts and Location -->
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Westerwelle Startup Haus-Mombasa, 3rd Floor Mombasa Mall.</li>
+                    <li><i class="fas fa-phone"></i> +254 726 304 652</li>
+                    <li><i class="fas fa-envelope"></i> whaledigital22@gmail.com</li>
+                </ul>
+            </div>
+
+<!-- Column 5: Newsletter and Social Media -->
+<div class="footer-column">
+    <h4>Subscribe to Our Newsletter</h4>
+    <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit">Subscribe</button>
+    </form>
+    <div class="social-media">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/whaledigitalstudios/" class="social-icon" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            
+            <a href="https://x.com/WHALEDIGITALINC" class="social-icon" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+            
+            <a href="https://www.instagram.com/whaledigitalstudios/" class="social-icon" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            
+            <a href="https://www.linkedin.com/company/101569789/admin/dashboard/" class="social-icon" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>            
+        </div>
     </div>
-    
-                <!-- Column 4: Contacts and Location -->
-                <div class="footer-column">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</li>
-                        <li><i class="fas fa-phone"></i> +123 456 7890</li>
-                        <li><i class="fas fa-envelope"></i> info@whaledigitalstudios.com</li>
-                    </ul>
-                </div>
-    
-    <!-- Column 5: Newsletter and Social Media -->
-    <div class="footer-column">
-        <h4>Subscribe to Our Newsletter</h4>
-        <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email address" required>
-            <button type="submit">Subscribe</button>
-        </form>
-        <div class="social-media">
-            <h4>Follow Us</h4>
-            <div class="social-icons">
-                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+</div>
+
+        <!-- Bottom Row: Copyright Section -->
+        <div class="footer-bottom-row">
+            <div class="copyright">
+                &copy; 2025 Whale Digital Studios. All rights reserved.
             </div>
         </div>
     </div>
-    
-            <!-- Bottom Row: Copyright Section -->
-            <div class="footer-bottom-row">
-                <div class="copyright">
-                    &copy; 2025 Whale Digital Studios. All rights reserved.
-                </div>
-            </div>
-        </div>
-    </footer>
+</footer>
+
     
 
     <script>

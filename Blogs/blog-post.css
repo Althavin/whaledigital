@@ -8,43 +8,100 @@ body {
   padding: 0;
 }
 
-/* Header with Glass Effect */
+
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
 .header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
-  background-color: #000000; /* Semi-transparent black */
-  backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
-  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  background-color: black;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-bottom: 0 px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+  padding: 10px 0;
+  z-index: 1000;
 }
 
 /* Navbar */
 .navbar {
-  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
+/* Logo */
 .navbar-brand img {
-  height: 50px; /* Adjust logo height */
+  height: 50px;
 }
 
+/* Navigation Menu */
 .navbar-nav {
-  gap: 20px; /* Space between nav items */
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-nav li {
+  display: inline-block;
 }
 
 .nav-link {
-  color: #DC7901 !important; /* Dark gray text */
-  font-weight: bold; /* Bold text */
+  text-decoration: none;
+  color: #DC7901;
+  font-weight: bold;
+  padding: 10px 15px;
   transition: color 0.3s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: #f0f0f0 !important; /* Secondary color */
+  color: #f0f0f0;
 }
 
+/* Mobile Menu Button */
+.navbar-toggler {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-nav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      right: 0;
+      top: 60px;
+      background: black;
+      width: 200px;
+      padding: 10px;
+  }
+
+  .navbar-nav li {
+      margin-bottom: 10px;
+  }
+
+  .navbar-toggler {
+      display: block;
+  }
+}
 
 
   /* Footer Section */
