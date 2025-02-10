@@ -445,4 +445,9 @@ a:hover {
         width: 100%;
         max-width: 300px;
     }
+    .social-icons {
+        display: flex;
+        gap: 15px; /* Space between icons */
+        justify-content: center; /* Center the icons */
+    }
 }

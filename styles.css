@@ -732,7 +732,7 @@ a:hover {
 /* About Us Section */
 .about-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, #000000, #000000), url('assets/images/bg-pattern.png'); /* Gradient + pattern */
+    background: linear-gradient(135deg, #000000, #000000); /* Gradient + pattern */
     background-blend-mode: overlay;
     color: #ffffff; /* White text */
     position: relative;

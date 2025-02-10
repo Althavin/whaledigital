@@ -54,6 +54,39 @@
 </header>
 
     <!-- Hero Section -->
+    <style>
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    
+        @keyframes slideInFromRight {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    
+        .hero-section h1 {
+            animation: slideInFromLeft 1s ease-out;
+        }
+    
+        .hero-section p.lead {
+            animation: slideInFromRight 1s ease-out;
+        }
+    </style>
+    
+    <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="container">
             <div class="hero-content">
@@ -70,8 +103,6 @@
             </div>
         </div>
     </section>
-
-
 <!-- Banner Section -->
 <section class="banner-section">
     <div class="container">
@@ -121,7 +152,7 @@
         <!-- Service 2: UX/UI Design -->
         <div class="service-row"> <!-- Removed the "reverse" class -->
             <div class="service-image">
-                <img src="assets/images/ux-ui.jpg" alt="UX/UI Design" class="img-fluid">
+                <img src="assets/images/ux-ui.png" alt="UX/UI Design" class="img-fluid">
             </div>
             <div class="service-text">
                 <h3>UX/UI Design</h3>
@@ -140,7 +171,7 @@
         <!-- Service 3: Business Software Systems -->
         <div class="service-row">
             <div class="service-image">
-                <img src="assets/images/software-systems.jpg" alt="Business Software Systems" class="img-fluid">
+                <img src="assets/images/pos-system.webp" alt="Business Software Systems" class="img-fluid">
             </div>
             <div class="service-text">
                 <h3>Business Software Systems</h3>
@@ -228,6 +259,7 @@
 </section>
 
  <!-- Testimonials Section -->
+<!-- Testimonials Section -->
 <section id="testimonials" class="testimonials-section">
     <div class="container">
         <h2 class="section-title">What Our Clients Say</h2>
@@ -235,8 +267,6 @@
             <div class="testimonials-slider">
                 <!-- Testimonial Cards will be dynamically added here -->
             </div>
-            <button class="slider-btn prev-btn">&larr;</button>
-            <button class="slider-btn next-btn">&rarr;</button>
         </div>
     </div>
 </section>
@@ -355,10 +385,10 @@
             <!-- Column 1: Hyperlinks to Pages -->
             <div class="footer-column">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="Services/services.html">Services</a></li>
-                    <li><a href="Blogs/blog.html">Blog</a></li>
-                    <li><a href="Contact/contact.html">Contact</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../Services/services.html">Services</a></li>
+                    <li><a href="../Blogs/blog.html">Blog</a></li>
+                    <li><a href="../Contact/contact.html">Contact</a></li>
                 </ul>
             </div>
 
@@ -366,10 +396,10 @@
             <div class="footer-column">
                 <h4>Our Services</h4>
                 <ul>
-                    <li><a href="Services/services.html#website-development">Website Development</a></li>
-                    <li><a href="Services/services.html#ux-ui-design">UX/UI Design</a></li>
-                    <li><a href="Services/services.html#business-software">Business Software Systems</a></li>
-                    <li><a href="Services/services.html#mobile-app-development">Mobile App Development</a></li>
+                    <li><a href="../Services/services.html#web-development">Website Development</a></li>
+                    <li><a href="../Services/services.html#ux-ui-design">UX/UI Design</a></li>
+                    <li><a href="../Services/services.html#business-software">Business Software Systems</a></li>
+                    <li><a href="../Services/services.html#mobile-app-development">Mobile App Development</a></li>
                 </ul>
             </div>
 

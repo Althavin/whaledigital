@@ -48,9 +48,8 @@ function animateCounters() {
 window.addEventListener('load', animateCounters);
 
 // Testimonials Slider
+// Testimonials Slider
 const slider = document.querySelector('.testimonials-slider');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
 let currentIndex = 0;
 
 const testimonials = [
@@ -84,27 +83,16 @@ function renderTestimonials() {
     `).join('');
 }
 
-
-
 // Render testimonials on page load
 renderTestimonials();
 
-
-prevBtn.addEventListener('click', () => {
+// Automatically change testimonials every 2 seconds
+setInterval(() => {
     const isMobile = window.innerWidth <= 768;
-    currentIndex = Math.max(0, currentIndex - (isMobile ? 2 : 4));
+    const itemsPerView = isMobile ? 2 : 4;
+    currentIndex = (currentIndex + itemsPerView) % testimonials.length;
     renderTestimonials();
-  });
-  
-  nextBtn.addEventListener('click', () => {
-    const isMobile = window.innerWidth <= 768;
-    currentIndex = Math.min(
-      testimonials.length - (isMobile ? 2 : 4), 
-      currentIndex + (isMobile ? 2 : 4)
-    );
-    renderTestimonials();
-  });
-
+}, 2000);
 
 // Star Rating in Feedback Form
 const stars = document.querySelectorAll('.star-rating .star');
