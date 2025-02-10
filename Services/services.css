@@ -535,4 +535,7 @@ button[type="submit"]:hover {
         width: 100%;
         max-width: 300px;
     }
+    .social-icons {
+        justify-content: center; /* Center the icons */
+    }
 }

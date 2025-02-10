@@ -171,6 +171,22 @@ a:hover {
     color: #00766A; /* Secondary color */
 }
 
+/* Original mobile responsive code block */
+@media (max-width: 768px) {
+    .hero-section .cta-buttons {
+      flex-direction: column; /* Stack vertically */
+      gap: 15px; /* Space between buttons */
+      width: 100%; /* Full width container */
+    }
+  
+    .hero-section .btn-primary,
+    .hero-section .btn-secondary {
+      width: 100%; /* Full width buttons */
+      margin-top: 0; /* Remove any previous top margins */
+    }
+  }
+
+
 .hero-section .trust-badge {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
@@ -180,7 +196,6 @@ a:hover {
     margin: 5px 0;
 }
 
-/* Banner Section */
 /* Banner Section */
 .banner-section {
     background: linear-gradient(135deg, #00766A, #00766A); /* Gradient background */
@@ -371,11 +386,12 @@ a:hover {
 @media (max-width: 768px) {
     .service-row, .service-row.reverse {
         flex-direction: column; /* Stack image and text on smaller screens */
-        text-align: center;
+        text-align: left;
     }
 
     .service-image img {
         height: 200px; /* Smaller height for mobile */
+        align-items: center;
     }
 
     .service-text {
@@ -518,6 +534,7 @@ a:hover {
     }
 }
 
+
 /* Testimonials Section */
 .testimonials-section {
     padding: 80px 0;
@@ -625,6 +642,31 @@ a:hover {
         right: 0px; /* Adjust for smaller screens */
     }
 }
+
+
+/* Mobile Responsive Adjustment */
+@media (max-width: 768px) {
+    .testimonials-slider {
+      flex-direction: column; /* Stack vertically */
+      gap: 25px; /* Space between cards */
+      width: 90%;
+      margin: 0 auto;
+    }
+  
+    .testimonial-card {
+      flex: 0 0 100% !important; /* Full width cards */
+      margin: 0 !important; /* Remove horizontal spacing */
+      min-height: 300px; /* Adjust height for mobile */
+    }
+  }
+
+
+/* Feedback Dashboard */
+.feedback-section {
+    padding: 80px 0;
+    background-color: #ffffff; /* White background */
+}
+
 
 /* Feedback Dashboard */
 .feedback-section {
@@ -783,7 +825,7 @@ a:hover {
 @media (max-width: 768px) {
     .about-content {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
     }
 
     .services-list li {
@@ -1022,5 +1064,10 @@ a:hover {
     .newsletter-form input {
         width: 100%;
         max-width: 300px;
+    }
+    .social-icons {
+        display: flex;
+        gap: 15px; /* Space between icons */
+        justify-content: center; /* Center the icons */
     }
 }

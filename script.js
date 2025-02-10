@@ -64,8 +64,15 @@ const testimonials = [
     // Add more testimonials as needed
 ];
 
+// MODIFIED RENDER FUNCTION
 function renderTestimonials() {
-    slider.innerHTML = testimonials.slice(currentIndex, currentIndex + 4).map(testimonial => `
+    const isMobile = window.innerWidth <= 768;
+    const itemsPerView = isMobile ? 2 : 4; // Detect mobile vs desktop
+    
+    // Ensure we always show complete pairs/pages
+    currentIndex = Math.min(currentIndex, testimonials.length - itemsPerView);
+
+    slider.innerHTML = testimonials.slice(currentIndex, currentIndex + itemsPerView).map(testimonial => `
         <div class="testimonial-card">
             <img src="${testimonial.picture || 'assets/images/placeholder.png'}" alt="${testimonial.name}">
             <h3>${testimonial.name}</h3>
@@ -77,22 +84,27 @@ function renderTestimonials() {
     `).join('');
 }
 
+
+
 // Render testimonials on page load
 renderTestimonials();
 
-prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex -= 1;
-        renderTestimonials();
-    }
-});
 
-nextBtn.addEventListener('click', () => {
-    if (currentIndex < testimonials.length - 4) {
-        currentIndex += 1;
-        renderTestimonials();
-    }
-});
+prevBtn.addEventListener('click', () => {
+    const isMobile = window.innerWidth <= 768;
+    currentIndex = Math.max(0, currentIndex - (isMobile ? 2 : 4));
+    renderTestimonials();
+  });
+  
+  nextBtn.addEventListener('click', () => {
+    const isMobile = window.innerWidth <= 768;
+    currentIndex = Math.min(
+      testimonials.length - (isMobile ? 2 : 4), 
+      currentIndex + (isMobile ? 2 : 4)
+    );
+    renderTestimonials();
+  });
+
 
 // Star Rating in Feedback Form
 const stars = document.querySelectorAll('.star-rating .star');
