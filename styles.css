@@ -287,7 +287,8 @@ a:hover {
 /* Reversed layout for the second service */
 .service-row.reverse {
     flex-direction: row-reverse;
-}
+    display: flex;
+    }
 
 .service-image, .service-text {
     flex: 1;
@@ -369,6 +370,7 @@ a:hover {
     color: #DC7901; /* Orange text on hover */
     border-color: #00766A; /* Green border on hover */
 }
+
 
 /* Common Button Styles */
 .btn-service {
