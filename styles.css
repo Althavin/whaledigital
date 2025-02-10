@@ -167,8 +167,8 @@ a:hover {
 }
 
 .hero-section .btn-secondary:hover {
-    background-color: #ffffff; /* White background */
-    color: #00766A; /* Secondary color */
+    background-color: #00766A; /* White background */
+    color: #000000; /* Secondary color */
 }
 
 /* Original mobile responsive code block */
@@ -540,7 +540,7 @@ a:hover {
 /* Testimonials Section */
 .testimonials-section {
     padding: 80px 0;
-    background-color: #f8f9fa; /* Light background */
+    background-color: #f4efef; /* Light background */
 }
 
 .section-title {
@@ -841,7 +841,7 @@ a:hover {
 /* Our Partners Section */
 .partners-section {
     padding: 80px 0;
-    background-color: #ffffff; /* White background */
+    background-color: #f4efef; /* White background */
 }
 
 .section-title {
